@@ -16,7 +16,7 @@ If you receive any error when pressing the last command, just follow the instruc
 
 3. Configure and fill the database
 
-* Configure the .env file to configure the connection to your database. If you don't know how to do that, follow this documentation:
+* Parametrize the .env file to configure the connection to your database. If you don't know how to do that, follow this documentation:
 https://symfony.com/doc/current/doctrine.html
 * Type these lines of codes to configure your database and load the fixtures (which loads pre-set data in your database)
 ~~~
@@ -61,17 +61,17 @@ There are 3 user roles. It is not allowed to register on the website, even for t
 
 To understand the roles you can check the `/config/packages/security.yaml` file.
 
-### IS_AUTHENTICATED_ANONYMOUSLY
+##### IS_AUTHENTICATED_ANONYMOUSLY
 The visitors of the website are not logged in. So they have access to the Front office described in a previous section.
 
-### User
+##### User
 The user role doesn't give more permission than the previous one. 
 
-### Admin
+##### Admin
 The administrators have access to the back office after they are logged in. So they can interact with the crud of the circuits, steps and programs.
 He can also see all the circuits in the Front office, even those without programs.
 
-### Superadmin
+##### Superadmin
 It is the most powerful role.
 He has the same permissions as the administrators and access to the list of collaborators and the power to delete their accounts (but not create new ones).
 
@@ -80,7 +80,7 @@ The fixtures are available in this folder: `/src/DataFixtures/`.
 
 They contain several fake circuits and programs in order to test the different functionnalities described above. So for example, some circuits don't have valid programs.
 
-Also they add different user roles (login | pwd):
+Also they add different users (login | pwd):
 * **Superadmin:** superadmin |superadmin
 * **Admin:** admin | admin
 * **User:** lambda | lambda 
