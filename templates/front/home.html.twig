@@ -1,0 +1,336 @@
+{# Template de la page d'accueil de l'application #}
+
+{% extends "/front/base_front.html.twig" %}
+
+{% block title %}SymfTravel - Accueil{% endblock %}
+
+{% block main %}
+	<aside id="colorlib-hero">
+		<div class="flexslider">
+		<ul class="slides">
+		<li style="background-image: url(images/img_bg_1.jpg);">
+			<div class="overlay"></div>
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+						<div class="slider-text-inner text-center">
+							<h2>Un tour en 2 jours</h2>
+							<h1>L'Île-de-France comme vous ne l'avez jamais vue</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</li>
+		<li style="background-image: url(images/img_bg_7.jpg);">
+			<div class="overlay"></div>
+			<div class="container-fluid">
+			   	<div class="row">
+				   	<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   		<div class="slider-text-inner text-center">
+				   			<h2>Des voyages de 10 jours</h2>
+				   			<h1>De l'Andalousie au Viêt Nam</h1>
+				   		</div>
+				   	</div>
+				</div>
+			</div>
+		</li>
+		<li style="background-image: url(images/img_bg_5.jpg);">
+			<div class="overlay"></div>
+			<div class="container-fluids">
+				<div class="row">
+				   	<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+				   		<div class="slider-text-inner text-center">
+				   			<h2>Découvrez notre agence de voyage</h2>
+				   			<h1>SymfTravel</h1>
+				   		</div>
+				   	</div>
+				</div>
+			</div>
+		</li>
+			<li style="background-image: url(images/img_bg_4.jpg);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+							<div class="slider-text-inner text-center">
+								<h2>Réalisez le meilleur</h2>
+								<h1>Voyage de votre vie</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>	   	
+		</ul>
+		</div>
+	</aside>
+
+	<div id="colorlib-services">
+		<div class="container">
+			<div class="row no-gutters">
+				<div class="col-md-3 animate-box text-center aside-stretch">
+					<div class="services">
+						<span class="icon">
+							<i class="flaticon-around"></i>
+						</span>
+						<h3>Un voyage hors-norme</h3>
+						<p>Laissez-vous envoûter par l'exotisme et l'originalité de nos circuits.</p>
+					</div>
+				</div>
+				<div class="col-md-3 animate-box text-center">
+					<div class="services">
+						<span class="icon">
+							<i class="flaticon-landmark"></i>
+						</span>
+						<h3>Nos circuits épatants </h3>
+						<p>Présents dans le monde entier, nous pouvons vous faire visiter le pays de vos rêves.</p>
+					</div>
+				</div>
+				<div class="col-md-3 animate-box text-center">
+					<div class="services">
+						<span class="icon">
+							<i class="flaticon-resort"></i>
+						</span>
+						<h3>Réservez votre voyage</h3>
+						<p>Envie de partir dès la semaine prochaine ? Notre réactivité exceptionnelle est là pour vous servir au mieux.</p>
+					</div>
+				</div>
+				<div class="col-md-3 animate-box text-center">
+					<div class="services">
+						<span class="icon">
+							<i class="flaticon-postcard"></i>
+						</span>
+						<h3>Notre SAV</h3>
+						<p>Nous avons toujours mis l'accent sur notre relation avec vous. Vous bénéficierez d'un support infaillible concernant vos voyages.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="colorlib-tour colorlib-light-grey">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+					<h2>Les voyages populaires</h2>
+					<p>Qui de mieux que vous-mêmes pour présenter les voyages les plus appréciés ?</p>
+				</div>
+			</div>
+		</div>
+		<div class="tour-wrap">
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-1.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 439 Avis</p>
+					<h2>Les débuts de la civilisation</h2>
+					<span class="city">Athènes, Grèce</span>
+					<span class="price">450€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-2.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 633 Avis</p>
+					<h2>Bouddha & la plage</h2>
+					<span class="city">Bangkok, Thaïlande</span>
+					<span class="price">1600€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-3.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 545 Avis</p>
+					<h2>À la découverte d'un archipel</h2>
+					<span class="city">Manille, Philippines</span>
+					<span class="price">1560€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-4.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 230 Avis</p>
+					<h2>Le Pays du Soleil Levant</h2>
+					<span class="city">Kyoto, Japon</span>
+					<span class="price">1800€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-5.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 322 Avis</p>
+					<h2>(Re)découvrez l'Île-de-France</h2>
+					<span class="city">Paris, France</span>
+					<span class="price">1200€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-6.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 166 Avis</p>
+					<h2>L'Italie sous toutes ses coutures</h2>
+					<span class="city">Palerme, Italie</span>
+					<span class="price">1300€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-7.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 709 Avis</p>
+					<h2>Dans les terres des Pharaons</h2>
+					<span class="city">Le Caire, Égypte</span>
+					<span class="price">1400€</span>
+				</span>
+			</a>
+			<a href="{{ path('front_programs') }}" class="tour-entry animate-box">
+				<div class="tour-img" style="background-image: url(images/tour-8.jpg);">
+				</div>
+				<span class="desc">
+					<p class="star"><span><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i><i class="icon-star-full"></i></span> 280 Avis</p>
+					<h2>Un tour en famille au Viêt Nam</h2>
+					<span class="city">Hanoï, Viêt Nam</span>
+					<span class="price">1730€</span>
+				</span>
+			</a>
+		</div>
+	</div>
+
+
+	<div id="colorlib-blog">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+					<h2>L'Actualité</h2>
+					<p>Les conseils et informations les plus récents, fournis par nos meilleurs experts.</p>
+				</div>
+			</div>
+			<div class="blog-flex">
+				<div class="f-entry-img" style="background-image: url(images/blog-3.jpg);">
+				</div>
+				<div class="blog-entry aside-stretch-right">
+					<div class="row">
+						<div class="col-md-12 animate-box">
+							<a href="{{path('front_news')}}#art1" class="blog-post">
+								<span class="img" style="background-image: url(images/blog-1.jpg);"></span>
+								<div class="desc">
+									<span class="date">29/11/2018</span>
+									<h3>Les villes qui font rêver</h3>
+									<span class="cat">Le détail</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-12 animate-box">
+							<a href="{{path('front_news')}}#art2" class="blog-post">
+								<span class="img" style="background-image: url(images/blog-2.jpg);"></span>
+								<div class="desc">
+									<span class="date">26/11/2018</span>
+									<h3>Comment trouver rapidement son voyage de rêve</h3>
+									<span class="cat">Participez à notre quiz</span>
+								</div>
+							</a>
+						</div>
+						<div class="col-md-12 animate-box">
+							<a href="{{path('front_news')}}#art3" class="blog-post">
+								<span class="img" style="background-image: url(images/blog-4.jpg);"></span>
+								<div class="desc">
+									<span class="date">14/10/2018</span>
+									<h3>Les voyages avantageux du moment</h3>
+									<span class="cat">Lire la suite</span>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div id="colorlib-intro" class="intro-img" style="background-image: url(images/cover-img-1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 animate-box">
+					<div class="intro-desc">
+						<div class="text-salebox">
+							<div class="text-lefts">
+								<div class="sale-box">
+									<div class="sale-box-top">
+										<h2 class="number">-45</h2>
+										<span class="sup-1">%</span>
+									</div>
+									<h2 class="text-sale">Offre</h2>
+								</div>
+							</div>
+							<div class="text-rights">
+								<h3 class="title">Profitez de cette offre limitée !</h3>
+								<p>La Thaïlande, pays des Siam, a fait rêver de nombreuses générations, de ses temples bouddhistes à ses plages paradisiaques.</p>
+								<p><a href="{{ path('front_programs') }}" class="btn btn-primary">Réservez maintenant</a> <a href="{{ path('front_circuits') }}" class="btn btn-primary btn-outline">Plus d'informations</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6 animate-box">
+					<div class="video-wrap">
+						<div class="video colorlib-video" style="background-image: url(images/img_bg_2.jpg);">
+							<a href="https://vimeo.com/235627725" class="popup-vimeo"><i class="icon-video"></i></a>
+							<div class="video-overlay"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="colorlib-testimony" class="colorlib-light-grey">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3 text-center colorlib-heading animate-box">
+					<h2>L'avis de nos derniers clients</h2>
+					<p>Comment vous ressentez nos voyages.</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 animate-box">						
+					<div class="owl-carousel2">
+						<div class="item">
+							<div class="testimony text-center">
+								<span class="img-user" style="background-image: url(images/person1.jpg);"></span>
+								<span class="user">Jeanne Delafleur</span>
+								<small>Paris, France</small>
+								<blockquote>
+									<p>" L'Andalousie est assurément le meilleur voyage que j'aie fait de ma vie. Merci SymfTravel pour votre accompagnement et votre considération permanente du client. "</p>
+								</blockquote>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony text-center">
+								<span class="img-user" style="background-image: url(images/person2.jpg);"></span>
+								<span class="user">Arthur Notte</span>
+								<small>Liège, Bruxelles</small>
+								<blockquote>
+									<p>" Étant belge, je n'avais jamais réellement eu l'occasion de visiter la France. La qualité du voyage ainsi que son prix fort avantageux m'ont fait découvrir l'Île-de-France dans les meilleures conditions possibles. "</p>
+								</blockquote>
+							</div>
+						</div>
+						<div class="item">
+							<div class="testimony text-center">
+								<span class="img-user" style="background-image: url(images/person3.jpg);"></span>
+								<span class="user">Ima Becker</span>
+								<small>Poitiers, France</small>
+								<blockquote>
+									<p>" Le Viêt Nam a toujours été une de mes destinations de rêve. Grâce à SymfTravel j'ai pu réellement visiter les endroits les plus visités du pays, en un temps et avec un prix records ! "</p>
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %} {# main #}
+

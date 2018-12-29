@@ -1,0 +1,118 @@
+{% extends '/front/base_front.html.twig' %}
+
+{% block title %}SymfTravel - Circuit n°{{circuit.id}}{% endblock %}
+
+{% block main %}
+    <aside id="colorlib-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			<li style="background-image: url(/images/cover-img-3.jpg);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+							<div class="slider-text-inner text-center">
+								<h2>Nos programmations</h2>
+								<h1>Circuit n°{{circuit.id}}</h1>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+	</aside>
+    
+    <div id="circuit">
+        <div class="container">
+            <h1>Circuit {{circuit.id}}</h1>
+            <a href={{ path('front_handle_like', {id: circuit.id}) }} role="button" class="btn js-like">
+                    <span class="oi oi-heart"></span>
+                    {% if app.session.get('likes') != null and circuit.id in app.session.get('likes') %}
+                        <i class="js-icon-like icon-heart"></i>
+                        <span class="js-like-text">Je n'aime plus</span>
+                    {% else %}
+                        <i class="js-icon-like icon-heart2"></i>
+                        <span class="js-like-text">J'aime</span>
+                    {% endif %}
+            </a>
+            <a role="button" class="btn btn-info" href="{{ path('front_circuits') }}">Revenir à la liste des circuits</a>
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">Id</th>
+                        <td>{{ circuit.id }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Description</th>
+                        <td>{{ circuit.description }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pays de départ</th>
+                        <td>{{ circuit.departureCountry }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ville de départ</th>
+                        <td>{{ circuit.departureCity }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Ville d'arrivée</th>
+                        <td>{{ circuit.arrivalCity }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Durée du circuit</th>
+                        <td>{{ circuit.duration }} jours</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Catégorie</th>
+                        <td>{{ circuit.category }}</td>
+                </tbody>
+            </table>
+            <h2>Étapes</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Numéro</th>
+                        <th scope="col">Ville</th>
+                        <th scope="col">Nombre de jours</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {%  for step in steps %}
+                    <tr>
+                        <td>{{ step.stepNb }}</td>
+                        <td>{{ step.city }}</td>
+                        <td>{{ step.nbDays }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+            <h2>Programmations</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Date de départ</th>
+                        <th scope="col">Nombre de Personnes</th>
+                        <th scope="col">Prix</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for program in programs %}
+                    <tr>
+                        <td>{{ program.departureDate|date("m/d/Y") }}</td>
+                        <td>{{ program.nbPeople }}</td>
+                        <td>{{ program.price }}€</td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="2">Aucune programmation n'a été trouvée</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <a href="{{ path('front_programs') }}">retour à l'accueil</a>
+
+{% endblock %} {# main #}

@@ -1,0 +1,33 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block title %}Voir - Etape{% endblock %}
+
+{% block main %}
+    <h1>L'étape n°{{step.id}} du <a href="{{ path('admin_circuit_show', {'id': step.circuit.id})}}">circuit n°{{ step.circuit }}</a></h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th scope="row">Id</th>
+                <td>{{ step.id }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Numéro d'étape</th>
+                <td>{{ step.stepNb }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Ville</th>
+                <td>{{ step.city }}</td>
+            </tr>
+            <tr>
+                <th scope="row">Nombre de jours</th>
+                <td>{{ step.nbDays }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a role="button" class="btn btn-secondary" href="{{ path('admin_step_edit', {'id': step.id}) }}">Editer</a>
+    <a role="button" class="btn btn-info" href="{{ path('admin_step_index') }}">Revenir à la liste</a>
+
+    {{ include('back/step/_delete_form.html.twig') }}
+{% endblock %}

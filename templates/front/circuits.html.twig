@@ -1,0 +1,65 @@
+{% extends '/front/base_front.html.twig' %}
+
+{% block title %}Liste des circuits{% endblock %}
+
+{% block main %}
+    <aside id="colorlib-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			<li style="background-image: url(/images/cover-img-3.jpg);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+							<div class="slider-text-inner text-center">
+								<h2>Laissez-nous vous faire rêver</h2>
+								<h1>Nos circuits</h1>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+	</aside>
+
+    <div id="circuits">
+        <div class="container">
+            <h1>Liste des circuits</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="row">Description</th>
+                        <th scope="row">Pays de départ</th>
+                        <th scope="row">Ville de départ</th>
+                        <th scope="row">Ville d'arrivée</th>
+                        <th scope="row">Durée</th>
+                        <th scope="row">Catégorie</th>
+                        <th scope="row">En savoir plus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for circuit in circuits %}
+                    {% if circuit.validPrograms or is_granted('ROLE_ADMIN') %}
+                    <tr>
+                        <td>{{ circuit.description }}</td>
+                        <td>{{ circuit.departureCountry }}
+                        <td>{{ circuit.departureCity }}</td>
+                        <td>{{ circuit.arrivalCity }}</td>
+                        <td>{{ circuit.duration }} jours</td>
+                        <td>{{ circuit.category }}</td>
+                        <td>
+                            <a href="{{ path('front_circuit_show', {id: circuit.id}) }}">détails</a>
+                        </td>
+                    </tr>
+                    {% endif %}
+                {% else %}
+                    <tr>
+                        <td colspan="2">no circuits found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %} {# main #}

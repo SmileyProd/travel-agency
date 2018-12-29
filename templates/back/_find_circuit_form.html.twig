@@ -1,0 +1,61 @@
+{{ form_start(form) }}
+    {{ form_widget(form) }}
+    <button class="btn btn-success">{{ button_label|default('Valider') }}</button>
+{{ form_end(form) }}
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th scope="row">Id</th>
+            <td id="idCircuit"></td>
+        </tr>
+        <tr>
+            <th scope="row">Description</th>
+            <td id="description"></td>
+        </tr>
+        <tr>
+            <th scope="row">Pays de départ</th>
+            <td id="departureCountry"></td>
+        </tr>
+        <tr>
+            <th scope="row">Ville de départ</th>
+            <td id="departureCity"></td>
+        </tr>
+        <tr>
+            <th scope="row">Ville d'arrivée</th>
+            <td id="arrivalCity"></td>
+        </tr>
+        <tr>
+            <th scope="row">Durée du circuit</th>
+            <td id="duration"></td>
+        </tr>
+        <tr>
+            <th scope="row">Catégorie</th>
+            <td id="category"></td>
+        </tr>
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Numéro d'étape</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Nombre de jours</th>
+        </tr>
+    </thead>
+    <tbody id="js-tbody-steps">
+    </tbody>
+</table>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">Date de départ</th>
+            <th scope="col">Nombre de Personnes</th>
+            <th scope="col">Prix</th>
+        </tr>
+    </thead>
+    <tbody id="js-tbody-programs">
+    </tbody>
+</table>

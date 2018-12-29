@@ -1,0 +1,63 @@
+h1, h2, h3, h4, h5, h6 {
+    color: rgb(20, 17, 17)
+}
+
+.btn {
+    margin: 10px 0;
+}
+
+nav .dropdown a,
+nav .dropdown a:hover,
+nav .dropdown a:focus {
+    color: white;
+}
+
+nav .dropdown .dropdown-item, 
+nav .dropdown .dropdown-item:hover,
+nav .dropdown .dropdown-item:focus {
+    color: black;
+}
+
+nav[class~="sidebar"] {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8));
+    /* background-color: black; */
+    position: fixed;
+    height: 100%;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    padding-top: 20px;
+    overflow: auto;
+}
+
+nav[class~="sidebar"] a {
+    color:rgba(184, 176, 176, 0.781);
+}
+
+nav[class~="sidebar"] a:focus,
+nav[class~="sidebar"] a:hover {
+    color: rgba(223, 217, 217, 0.995);
+}
+
+nav[class~="sidebar"] h3 {
+    padding-top: 5px;
+    font-size: 1.4em;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+nav[class~="sidebar"] h2 a {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+nav[class~="sidebar"] h2 a:focus,
+nav[class~="sidebar"] h2 a:hover {
+    color: rgba(255, 255, 255, 1);
+}
+
+
+main {
+    padding: 15px;
+}
+
+table .btn {
+    margin: 0px;
+}

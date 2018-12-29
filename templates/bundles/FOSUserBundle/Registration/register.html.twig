@@ -1,0 +1,12 @@
+{% extends "bundles/FOSUserBundle/layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+        {{ form_widget(form) }}
+        <div>
+            <input class="btn btn-success" type="submit" value="{{ 'registration.submit'|trans }}" />
+        </div>
+    {{ form_end(form) }}
+{% endblock %} {# fos_user_content #}

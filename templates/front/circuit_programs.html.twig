@@ -1,0 +1,59 @@
+{% extends '/front/base_front.html.twig' %}
+
+{% block title %}Liste des programmations{% endblock %}
+
+{% block main %}
+    <aside id="colorlib-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			<li style="background-image: url(/images/cover-img-4.jpg);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-sm-12 col-md-offset-3 slider-text">
+							<div class="slider-text-inner text-center">
+								<h2>La liste de vos rêves</h2>
+								<h1>Nos programmations</h1>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+	</aside>
+
+    <div id="programs">
+        <div class="container">
+            <h1>Liste des programmations</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Pays de départ</th>
+                        <th scope="col">Date de départ</th>
+                        <th scope="col">Nombre de Personnes</th>
+                        <th scope="col">Prix</th>
+                        <th scope="col">En savoir plus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for program in circuitsPrograms %}
+                    <tr>
+                        <td>{{ program.circuit.departureCountry }}
+                        <td>{{ program.departureDate|date("m/d/Y") }}</td>
+                        <td>{{ program.nbPeople }}</td>
+                        <td>{{ program.price }}€</td>
+                        <td>
+                            <a href="{{ path('front_circuit_show', {id: program.circuit.id}) }}">détails</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="2">no circuits found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %} {# main #}

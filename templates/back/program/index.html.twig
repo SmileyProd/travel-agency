@@ -1,0 +1,72 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block title %}Voir - Programmations{% endblock %}
+
+{% block main %}
+    <h1>Nos programmations</h1>
+
+    <a role="button" class="btn btn-success" href="{{ path('admin_program_find_circuit') }}">Créer une nouvelle programmation</a>
+
+    <h2>Nos programmations valides</h2>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Circuit</th>
+                <th scope="col">Date de départ</th>
+                <th scope="col">Nombre de Personnes</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for circuit_program in circuit_programs_valids %}
+            <tr>
+                <td><a href="{{ path('admin_circuit_show', {'id': circuit_program.circuit.id}) }}">{{ circuit_program.circuit }}</a></td>
+                <td>{{ circuit_program.departureDate ? circuit_program.departureDate|date('Y-m-d') : '' }}</td>
+                <td>{{ circuit_program.nbPeople }}</td>
+                <td>{{ circuit_program.price }}€</td>
+                <td>
+                    <a role="button" class="btn btn-primary" href="{{ path('admin_program_show', {'id': circuit_program.id}) }}">Voir</a>
+                    <a role="button" class="btn btn-secondary" href="{{ path('admin_program_edit', {'id': circuit_program.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de programmation trouvée.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Nos programmations passées</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Circuit</th>
+                <th scope="col">Date de départ</th>
+                <th scope="col">Nombre de Personnes</th>
+                <th scope="col">Prix</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for circuit_program in circuit_programs_invalids %}
+            <tr>
+                <td><a href="{{ path('admin_circuit_show', {'id': circuit_program.circuit.id}) }}">{{ circuit_program.circuit }}</a></td>
+                <td>{{ circuit_program.departureDate ? circuit_program.departureDate|date('Y-m-d') : '' }}</td>
+                <td>{{ circuit_program.nbPeople }}</td>
+                <td>{{ circuit_program.price }}€</td>
+                <td>
+                    <a role="button" class="btn btn-primary" href="{{ path('admin_program_show', {'id': circuit_program.id}) }}">Voir</a>
+                    <a role="button" class="btn btn-secondary" href="{{ path('admin_program_edit', {'id': circuit_program.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas de programmation trouvée.</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

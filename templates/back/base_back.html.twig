@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="/css/back/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/back/style.css">
+{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <div class="row">
+            {% block sidebar %}
+                <nav class="col-md-2 d-md d-block sidebar">
+                    <div class="sidebar-sticky">
+                        <ul class="nav flex-column">
+                            <h2><a class="navbar-brand" href="{{ path('front_home') }}">SymfTravel</a></h2>
+                             <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Bonjour {{ app.user.username }}
+                                </a>
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ path("fos_user_security_logout") }}">Se déconnecter</a>
+                                </div>
+                            </li>
+                            <h3>Circuits</h3>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_circuit_index') }}">Tous les circuits</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_circuit_new') }}">Créer un circuit</a>
+                            </li>
+                            <h3>Etapes</h3>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_step_index') }}">Toutes les étapes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_step_find_circuit') }}">Créer une étape</a>
+                            </li>
+                            <h3>Programmations</h3>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_program_index') }}">Toutes les programmations</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_program_find_circuit') }}">Créer une programmation</a>
+                            </li>
+                            <h3>Catégories</h3>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_category_index') }}">Toutes les catégories</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_category_new') }}">Créer une catégorie</a>
+                            </li>
+                        {% if is_granted('ROLE_SUPER_ADMIN') %}                    
+                            <h3>Collaborateurs</h3>
+                            <li class="nav-item">
+                                <a class="nav-link" href=" {{ path('admin_user_index') }}">Tous les collaborateurs</a>
+                            </li>
+                        {% endif %}
+                        </ul>
+                    </div>
+                </nav>
+            {% endblock %}
+            <div class="col-md-10 offset-md-2">
+                <div class="row">
+                    <div class="col-12">
+                        {% block flash %}
+                            {% for message in app.flashes('success') %}
+                                <div class="flash-notice alert alert-success m-1">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                            {% for message in app.flashes('error') %}
+                                <div class="flash-notice alert alert-danger m-1">
+                                    {{ message }}
+                                </div>
+                            {% endfor %}
+                        {% endblock %} {# flash #}
+                    </div>
+                </div>
+                <main>
+                    {% block main %}
+                    {% endblock %}
+                </main>
+            </div>
+        </div>
+    </div>
+    {% block footer %}
+    {% endblock %}
+{% endblock %}
+
+{% block javascripts %}
+    <script src="/js/back/jquery-3.3.1.min.js"></script>
+    <script src="/js/back/bootstrap.bundle.min.js"></script>
+    <script src="/js/back/delete_flash.js"></script>
+{% endblock %}

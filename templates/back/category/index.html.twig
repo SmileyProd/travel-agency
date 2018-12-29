@@ -1,0 +1,32 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block title %}CircuitCategory index{% endblock %}
+
+{% block main %}
+    <h1>Nos catégories</h1>
+
+    <a role="button" class="btn btn-success" href="{{ path('admin_category_new') }}">Créer une nouvelle catégorie</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope"col">Nom</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for circuit_category in circuit_categories %}
+            <tr>
+                <td>{{ circuit_category.name }}</td>
+                <td>
+                    <a role="button" class="btn btn-secondary" href="{{ path('admin_category_edit', {'id': circuit_category.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de catégorie trouvée</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %} {# main #}

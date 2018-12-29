@@ -1,0 +1,45 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block title %}Voir - Circuits{% endblock %}
+
+{% block main %}
+    <h1>Tous les circuits</h1>
+
+    <a role="button" class="btn btn-success" href="{{ path('admin_circuit_new') }}">Créer un nouveau circuit</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="row">Id</th>
+                <th scope="row">Description</th>
+                <th scope="row">Pays de départ</th>
+                <th scope="row">Ville de départ</th>
+                <th scope="row">Ville d'arrivée</th>
+                <th scope="row">Durée</th>
+                <th scope="row">Catégorie</th>
+                <th scope="row">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for circuit in circuits %}
+            <tr>
+                <td>{{ circuit.id }}</td>
+                <td>{{ circuit.description }}</td>
+                <td>{{ circuit.departureCountry }}</td>
+                <td>{{ circuit.departureCity }}</td>
+                <td>{{ circuit.arrivalCity }}</td>
+                <td>{{ circuit.duration }} jours</td>
+                <td>{{ circuit.category }}</td>
+                <td>
+                    <a role="button" class="btn btn-primary" href="{{ path('admin_circuit_show', {'id': circuit.id}) }}">Voir</a>
+                    <a role="button" class="btn btn-secondary" href="{{ path('admin_circuit_edit', {'id': circuit.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">Aucun circuit trouvé</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

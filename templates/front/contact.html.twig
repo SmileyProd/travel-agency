@@ -1,0 +1,82 @@
+{% extends '/front/base_front.html.twig' %}
+	
+{% block title %}Contact{% endblock %}
+
+{% block main %}
+	<aside id="colorlib-hero">
+		<div class="flexslider">
+			<ul class="slides">
+			<li style="background-image: url(images/cover-img-2.jpg);">
+				<div class="overlay"></div>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-12 col-xs-12 slider-text">
+							<div class="slider-text-inner text-center">
+								<h2>Un conseiller se tient à votre disposition</h2>
+								<h1>Contactez-nous</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</li>
+			</ul>
+		</div>
+	</aside>
+
+	<div id="colorlib-contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-md-offset-1 animate-box">
+					<h3>Prenez contact</h3>
+					{{ form_start(form) }}
+						<div class="row form-group">
+							<div class="col-md-6 padding-bottom">
+								{{ form_row(form.firstname) }}
+							</div>
+							<div class="col-md-6">
+								{{ form_row(form.lastname) }}
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								{{ form_row(form.email) }}
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								{{ form_row(form.subject) }}
+							</div>
+						</div>
+
+						<div class="row form-group">
+							<div class="col-md-12">
+								{{ form_row(form.message) }}
+							</div>
+						</div>
+						<div class="form-group text-center">
+							<input type="submit" value="Envoyer" class="btn btn-primary">
+						</div>
+					{{ form_end(form) }}		
+				</div>
+				<div class="col-md-10 col-md-offset-1 animate-box">
+					<h3>Nos contacts</h3>
+					<div class="row contact-info-wrap">
+						<div class="col-md-4">
+							<p><span><i class="icon-location"></i></span> 14 rue Charles Fourier, <br> 91000 Evry</p>
+						</div>
+						<div class="col-md-4">
+							<p><span><i class="icon-phone3"></i></span> <a href="tel://1234567920">06 47 80 12 65</a></p>
+						</div>
+						<div class="col-md-4">
+							<p><span><i class="icon-paperplane"></i></span> <a href="mailto:info@yoursite.com">info@symftravel.com</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="map" class="colorlib-map"></div>
+{% endblock %} {# main #}

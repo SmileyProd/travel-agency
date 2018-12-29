@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('admin_step_delete', {'id': step.id}) }}" onsubmit="return confirm('Voulez-vous vraiment supprimer cette étape?');">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ step.id) }}">
+    <button class="btn btn-danger">Supprimer</button>
+</form>

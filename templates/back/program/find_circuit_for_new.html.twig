@@ -1,0 +1,12 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block main %}
+    <h1>Ajoutez une nouvelle programmation</h1>
+    <p>Pour cela renseignez l'id du circuit auquel vous voulez ajouter une programmation</p>
+    {% include '/back/_find_circuit_form.html.twig' %}
+{% endblock %} {# main #}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script src="/js/back/get_circuit.js"></script>
+{% endblock %}

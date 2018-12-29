@@ -1,0 +1,32 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block title %}Nouvelle - Etape{% endblock %}
+
+{% block main %}
+    <h1>Créer une nouvelle étape</h1>
+
+    {{ include('back/step/_form.html.twig') }}
+
+    <a role="button" class="btn btn-info" href="{{ path('admin_step_index') }}">Revenir à la liste</a>
+    <h2>Étapes actuelles du circuit {{step.circuit.id}}</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Numéro</th>
+                <th scope="col">Ville</th>
+                <th scope="col">Nombre de jours</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {%  for step_circuit in step.circuit.steps %}
+            <tr>
+                <td>{{ step_circuit.stepNb }}</td>
+                <td>{{ step_circuit.city }}</td>
+                <td>{{ step_circuit.nbDays }}</td>
+                <td><a role="button" class="btn btn-secondary" href="{{ path('admin_step_edit', {'id': step_circuit.id}) }}">Editer</a></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

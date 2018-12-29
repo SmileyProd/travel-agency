@@ -1,0 +1,40 @@
+#circuits table,
+#programs table,
+#circuit table {
+    font-size: 17px;
+    table-layout: fixed
+}
+
+#circuit .js-like,
+#circuit .js-like:focus,
+#circuit .js-like:hover{
+    color: rgba(255, 145, 0, 0.863) !important;
+    margin-bottom: 8px;
+    margin-left: 0px;
+}
+
+.dropdown-connection {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.dropdown-connection a {
+    padding: 10px 3px !important;
+}
+
+.dropdown-connection a:hover,
+.dropdown-connection a:focus {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: rgba(255, 145, 0, 0.863) !important;
+}
+
+nav .number-likes {
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    color: black;
+}
+
+table .btn {
+    margin: 0;
+    padding: 0;
+}

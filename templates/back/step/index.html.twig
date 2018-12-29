@@ -1,0 +1,39 @@
+{% extends '/back/base_back.html.twig' %}
+
+{% block title %}Voir - Etapes{% endblock %}
+
+{% block main %}
+    <h1>Les étapes des circuits</h1>
+
+    <a role="button" class="btn btn-success" href="{{ path('admin_step_find_circuit') }}">Créer une nouvelle étape</a>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Circuit</th>
+                <th scope="col">Numéro d'étape</th>
+                <th scope="col">Ville</th>
+                <th scope="col">Nombre de jours</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for step in steps %}
+            <tr>
+                <td><a href="{{ path('admin_circuit_show', {'id': step.circuit.id}) }}">{{ step.circuit }}</a></td>
+                <td>{{ step.stepNb }}</td>
+                <td>{{ step.city }}</td>
+                <td>{{ step.nbDays }}</td>
+                <td>
+                    <a role="button" class="btn btn-primary" href="{{ path('admin_step_show', {'id': step.id}) }}">Voir</a>
+                    <a role="button" class="btn btn-secondary" href="{{ path('admin_step_edit', {'id': step.id}) }}">Editer</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">Pas d'étapes trouvées</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
