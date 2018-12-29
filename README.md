@@ -76,7 +76,7 @@ It is the most powerful role.
 He has the same permissions as the administrators and access to the list of collaborators and the power to delete their accounts (but not create new ones).
 
 ## Fixtures
-The fixtures are available in this repository: `/src/DataFixtures/`.
+The fixtures are available in this folder: `/src/DataFixtures/`.
 
 They contain several fake circuits and programs in order to test the different functionnalities described above. So for example, some circuits don't have valid programs.
 
