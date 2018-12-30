@@ -24,6 +24,10 @@ php bin/console doctrine:database:create
 php bin/console doctrine:schema:update --force
 php bin/console doctrine:fixtures:load
 ~~~
+4. Launch the local server
+~~~
+php bin/console server:run
+~~~
 
 ## Context
 
