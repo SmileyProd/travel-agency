@@ -28,6 +28,7 @@ php bin/console doctrine:fixtures:load
 ~~~
 php bin/console server:run
 ~~~
+5. Open your browser and type in the address bar: `localhost:8000`
 
 ## Context
 
