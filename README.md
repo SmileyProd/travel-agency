@@ -6,7 +6,7 @@ Follow these steps:
 
 1. Open a terminal
 
-2. Install the project
+2. Install the project (You need to have composer already installed)
 ~~~
 cd place_to_install_the_project
 git clone https://github.com/SmileyProd/travel-agency.git
